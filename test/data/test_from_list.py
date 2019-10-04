@@ -1,6 +1,5 @@
 import unittest
-import string
-import random
+
 # Local import
 from data import const
 from data.from_list import FromList
