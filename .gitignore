@@ -128,3 +128,4 @@ dmypy.json
 # Custom addition
 .idea
 .improvements
+time_perf.py
