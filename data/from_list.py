@@ -7,38 +7,57 @@ from .utils import Utils
 
 class FromList(Utils):
 
-    def __init__(self, obj, key=None):
-        Utils.__init__(self, obj)
-        self.copied_obj = deepcopy(obj)
+    def __init__(self, lst, key=None):
+        Utils.__init__(self, lst)
+        self.copied_lst = deepcopy(lst)
         if key:
             self.create_list(key)
         self.get_type()
         self.validate_items()
 
-    def analyse(self, analyse_type, feedback=True):
-        if analyse_type == const.ANALYSE_UNIQUE:
+    def analyze(self, analyze_type, feedback=True):
+        """
+        Analyze the list to get the items and their indexes
+        (depending on the analyze_type)
+        :return: {
+            "all_index": [INDEX(ES)],
+            "VALUE_1": [INDEX(ES)],
+            "VALUE_2": [INDEX(ES)],
+        }
+        """
+        if analyze_type == const.ANALYSE_UNIQUE:
             return self.get_indexes(const.INDEX_UNIQUE, feedback)
-        if analyse_type == const.ANALYSE_DUPLICATE:
+        if analyze_type == const.ANALYSE_DUPLICATE:
             return self.get_indexes(const.INDEX_DUPLICATE, feedback)
-        if analyse_type == const.ANALYSE_CREATE_UNIQUE:
+        if analyze_type == const.ANALYSE_CREATE_UNIQUE:
             return self.create_unique_index(feedback)
 
     def create_unique(self):
+        """
+        Delete duplicate item to create a list of unique items
+        :return: [list]
+        """
         indexes = self.create_unique_index()
 
         for index in indexes['all_index']:
-            del self.copied_obj[index]
+            del self.copied_lst[index]
 
-        return self.copied_obj
+        return self.copied_lst
 
     def get_unique(self):
-        # Get only all unique items
+        """
+        Get only all unique items
+        :return: [list]
+        """
         indexes = self.get_indexes(const.INDEX_UNIQUE)
 
-        return [self.copied_obj[index] for index in indexes['all_index']]
+        return [self.copied_lst[index] for index in indexes['all_index']]
 
     def get_duplicate(self):
-        # Get only all duplicate items
+        """
+        Get only all duplicate items
+        :return: [list]
+        """
         indexes = self.get_indexes(const.INDEX_DUPLICATE)
 
-        return [self.copied_obj[index] for index in indexes['all_index']]
+        return [self.copied_lst[index] for index in indexes['all_index']]

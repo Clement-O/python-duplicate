@@ -4,9 +4,9 @@ from .const import INDEX_DUPLICATE, INDEX_UNIQUE
 
 class Utils:
 
-    def __init__(self, obj):
+    def __init__(self, lst):
         self.indexes = {}
-        self.obj = obj
+        self.lst = lst
         self.item_type = list
 
     def create_list(self, key):
@@ -15,14 +15,14 @@ class Utils:
             Ex: obj = [{'id': 1}, {'id': 2}] . key = 'id'
         :return: [1, 2]
         """
-        self.obj = [value.get(key) for value in self.obj]
+        self.lst = [value.get(key) for value in self.lst]
 
     def get_type(self):
         """
         Get the type of the first item
         :return: item_type
         """
-        item = self.obj[0]
+        item = self.lst[0]
         if isinstance(item, (int, float)):
             self.item_type = (int, float)
         elif isinstance(item, str):
@@ -38,7 +38,7 @@ class Utils:
         :return if not: raise an TypeError
         :return if yes: nothing
         """
-        if not all(isinstance(x, self.item_type) for x in self.obj):
+        if not all(isinstance(x, self.item_type) for x in self.lst):
             raise TypeError(f'An item has a different type than the others')
 
     def create_update_feedback(self, index, value, feedback):
@@ -68,11 +68,11 @@ class Utils:
             }
         """
         indexes = []
-        for index, value in enumerate(self.obj):
-            if index_type == INDEX_DUPLICATE and self.obj.count(value) >= 2:
+        for index, value in enumerate(self.lst):
+            if index_type == INDEX_DUPLICATE and self.lst.count(value) >= 2:
                 self.create_update_feedback(index, value, feedback)
                 indexes.append(index)
-            if index_type == INDEX_UNIQUE and self.obj.count(value) == 1:
+            if index_type == INDEX_UNIQUE and self.lst.count(value) == 1:
                 self.create_update_feedback(index, value, feedback)
                 indexes.append(index)
         self.indexes['all_index'] = indexes
@@ -95,8 +95,8 @@ class Utils:
         """
         seen_value = []
         seen_index = []
-        for index, value in enumerate(self.obj):
-            if self.obj.count(value) >= 2:
+        for index, value in enumerate(self.lst):
+            if self.lst.count(value) >= 2:
                 if value not in seen_value:
                     seen_value.append(value)
                 else:

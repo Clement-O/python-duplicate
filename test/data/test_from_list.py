@@ -8,24 +8,24 @@ from test.data import test_const
 
 class TestFromList(unittest.TestCase):
 
-    def test_analyse_without_feedback(self):
+    def test_analyze_without_feedback(self):
         for index, value in enumerate(test_const.LIST):
             from_list = FromList(value)
-            analyze = from_list.analyse(const.ANALYSE_UNIQUE, False)
+            analyze = from_list.analyze(const.ANALYSE_UNIQUE, False)
             self.assertEqual(
                 analyze,
                 test_const.LIST_GET_INDEXES_UNIQUE[index]
             )
 
             from_list = FromList(value)
-            analyze = from_list.analyse(const.ANALYSE_DUPLICATE, False)
+            analyze = from_list.analyze(const.ANALYSE_DUPLICATE, False)
             self.assertEqual(
                 analyze,
                 test_const.LIST_GET_INDEXES_DUPLICATE[index]
             )
 
             from_list = FromList(value)
-            analyze = from_list.analyse(const.ANALYSE_CREATE_UNIQUE, False)
+            analyze = from_list.analyze(const.ANALYSE_CREATE_UNIQUE, False)
             self.assertEqual(
                 analyze,
                 test_const.LIST_CREATE_UNIQUE_INDEX[index]
@@ -33,44 +33,44 @@ class TestFromList(unittest.TestCase):
 
         for index, value in enumerate(test_const.DICT):
             from_list = FromList(value, 'id')
-            analyze = from_list.analyse(const.ANALYSE_UNIQUE, False)
+            analyze = from_list.analyze(const.ANALYSE_UNIQUE, False)
             self.assertEqual(
                 analyze,
                 test_const.DICT_GET_INDEXES_UNIQUE[index]
             )
 
             from_list = FromList(value, 'id')
-            analyze = from_list.analyse(const.ANALYSE_DUPLICATE, False)
+            analyze = from_list.analyze(const.ANALYSE_DUPLICATE, False)
             self.assertEqual(
                 analyze,
                 test_const.DICT_GET_INDEXES_DUPLICATE[index]
             )
 
             from_list = FromList(value, 'id')
-            analyze = from_list.analyse(const.ANALYSE_CREATE_UNIQUE, False)
+            analyze = from_list.analyze(const.ANALYSE_CREATE_UNIQUE, False)
             self.assertEqual(
                 analyze,
                 test_const.DICT_CREATE_UNIQUE_INDEX[index]
             )
 
-    def test_analyse_with_feedback(self):
+    def test_analyze_with_feedback(self):
         for index, value in enumerate(test_const.LIST):
             from_list = FromList(value)
-            analyze = from_list.analyse(const.ANALYSE_UNIQUE)
+            analyze = from_list.analyze(const.ANALYSE_UNIQUE)
             self.assertEqual(
                 analyze,
                 test_const.LIST_GET_INDEXES_UNIQUE_WITH_FEEDBACK[index]
             )
 
             from_list = FromList(value)
-            analyze = from_list.analyse(const.ANALYSE_DUPLICATE)
+            analyze = from_list.analyze(const.ANALYSE_DUPLICATE)
             self.assertEqual(
                 analyze,
                 test_const.LIST_GET_INDEXES_DUPLICATE_WITH_FEEDBACK[index]
             )
 
             from_list = FromList(value)
-            analyze = from_list.analyse(const.ANALYSE_CREATE_UNIQUE)
+            analyze = from_list.analyze(const.ANALYSE_CREATE_UNIQUE)
             self.assertEqual(
                 analyze,
                 test_const.LIST_CREATE_UNIQUE_INDEX_FEEDBACK[index]
@@ -78,21 +78,21 @@ class TestFromList(unittest.TestCase):
 
         for index, value in enumerate(test_const.DICT):
             from_list = FromList(value, 'id')
-            analyze = from_list.analyse(const.ANALYSE_UNIQUE)
+            analyze = from_list.analyze(const.ANALYSE_UNIQUE)
             self.assertEqual(
                 analyze,
                 test_const.DICT_GET_INDEXES_UNIQUE_WITH_FEEDBACK[index]
             )
 
             from_list = FromList(value, 'id')
-            analyze = from_list.analyse(const.ANALYSE_DUPLICATE)
+            analyze = from_list.analyze(const.ANALYSE_DUPLICATE)
             self.assertEqual(
                 analyze,
                 test_const.DICT_GET_INDEXES_DUPLICATE_WITH_FEEDBACK[index]
             )
 
             from_list = FromList(value, 'id')
-            analyze = from_list.analyse(const.ANALYSE_CREATE_UNIQUE)
+            analyze = from_list.analyze(const.ANALYSE_CREATE_UNIQUE)
             self.assertEqual(
                 analyze,
                 test_const.DICT_CREATE_UNIQUE_INDEX_WITH_FEEDBACK[index]
