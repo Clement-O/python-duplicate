@@ -2,5 +2,6 @@ venv/
 .pytest_cache/
 .idea
 .coverage
+*build/
 
 local/

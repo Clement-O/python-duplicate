@@ -19,6 +19,9 @@ In the future I intend to add support for:
 
 Alternatively, you can look at the project tab of this repo.
 
+## Doc
+Available at : [TODO](add_link)
+
 ## Examples
 ##### Import the class
 ```python
@@ -61,7 +64,7 @@ returned_lst = from_list.get_duplicate()
 ```
 ##### Get feedback of unique items of a list of string
 ```python
-from data.const import ANALYSE_UNIQUE
+from data.const import UNIQUE
 
 lst = [
     "one comma five", "two", "three", "three", "four", "five", "six",
@@ -69,10 +72,9 @@ lst = [
 ]
 
 from_list = FromList(lst)
-returned_lst = from_list.analyze(ANALYSE_UNIQUE)
+returned_lst = from_list.analyze(UNIQUE)
 
-# >>> [
-#   "all_index": [9, 8, 7, 3], "three": [3, 7], 
-#   "one comma five": [8], "four": [9]
-# ]
+# >>> {
+#   "all_index": [1, 5, 6], "five": [5], "six": [6], "two": [1]
+# }
 ```

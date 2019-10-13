@@ -62,7 +62,7 @@ class TestUtils(unittest.TestCase):
     def test_get_indexes_unique_without_feedback(self):
         for index, value in enumerate(test_const.LIST):
             utils = Utils(value)
-            indexes = utils.get_indexes(const.INDEX_UNIQUE)
+            indexes = utils.get_indexes(const.UNIQUE)
             self.assertEqual(
                 indexes,
                 test_const.LIST_GET_INDEXES_UNIQUE[index]
@@ -71,7 +71,7 @@ class TestUtils(unittest.TestCase):
         for index, value in enumerate(test_const.DICT):
             utils = Utils(value)
             utils.create_list('id')
-            indexes = utils.get_indexes(const.INDEX_UNIQUE)
+            indexes = utils.get_indexes(const.UNIQUE)
             self.assertEqual(
                 indexes,
                 test_const.DICT_GET_INDEXES_UNIQUE[index]
@@ -80,7 +80,7 @@ class TestUtils(unittest.TestCase):
     def test_get_indexes_unique_with_feedback(self):
         for index, value in enumerate(test_const.LIST):
             utils = Utils(value)
-            indexes = utils.get_indexes(const.INDEX_UNIQUE, feedback=True)
+            indexes = utils.get_indexes(const.UNIQUE, feedback=True)
             self.assertEqual(
                 indexes,
                 test_const.LIST_GET_INDEXES_UNIQUE_WITH_FEEDBACK[index]
@@ -89,7 +89,7 @@ class TestUtils(unittest.TestCase):
         for index, value in enumerate(test_const.DICT):
             utils = Utils(value)
             utils.create_list('id')
-            indexes = utils.get_indexes(const.INDEX_UNIQUE, feedback=True)
+            indexes = utils.get_indexes(const.UNIQUE, feedback=True)
             self.assertEqual(
                 indexes,
                 test_const.DICT_GET_INDEXES_UNIQUE_WITH_FEEDBACK[index]
@@ -98,7 +98,7 @@ class TestUtils(unittest.TestCase):
     def test_get_indexes_duplicate_without_feedback(self):
         for index, value in enumerate(test_const.LIST):
             utils = Utils(value)
-            indexes = utils.get_indexes(const.INDEX_DUPLICATE)
+            indexes = utils.get_indexes(const.DUPLICATE)
             self.assertEqual(
                 indexes,
                 test_const.LIST_GET_INDEXES_DUPLICATE[index]
@@ -107,7 +107,7 @@ class TestUtils(unittest.TestCase):
         for index, value in enumerate(test_const.DICT):
             utils = Utils(value)
             utils.create_list('id')
-            indexes = utils.get_indexes(const.INDEX_DUPLICATE)
+            indexes = utils.get_indexes(const.DUPLICATE)
             self.assertEqual(
                 indexes,
                 test_const.DICT_GET_INDEXES_DUPLICATE[index]
@@ -116,7 +116,7 @@ class TestUtils(unittest.TestCase):
     def test_get_indexes_duplicate_with_feedback(self):
         for index, value in enumerate(test_const.LIST):
             utils = Utils(value)
-            indexes = utils.get_indexes(const.INDEX_DUPLICATE, feedback=True)
+            indexes = utils.get_indexes(const.DUPLICATE, feedback=True)
             self.assertEqual(
                 indexes,
                 test_const.LIST_GET_INDEXES_DUPLICATE_WITH_FEEDBACK[index]
@@ -125,7 +125,7 @@ class TestUtils(unittest.TestCase):
         for index, value in enumerate(test_const.DICT):
             utils = Utils(value)
             utils.create_list('id')
-            indexes = utils.get_indexes(const.INDEX_DUPLICATE, feedback=True)
+            indexes = utils.get_indexes(const.DUPLICATE, feedback=True)
             self.assertEqual(
                 indexes,
                 test_const.DICT_GET_INDEXES_DUPLICATE_WITH_FEEDBACK[index]

@@ -1,5 +1,5 @@
 # Local import
-from .const import INDEX_DUPLICATE, INDEX_UNIQUE
+from .const import DUPLICATE, UNIQUE
 
 
 class Utils:
@@ -13,6 +13,7 @@ class Utils:
         """
         Create a list of all item of a given key
             Ex: obj = [{'id': 1}, {'id': 2}] . key = 'id'
+
         :return: [1, 2]
         """
         self.lst = [value.get(key) for value in self.lst]
@@ -20,6 +21,7 @@ class Utils:
     def get_type(self):
         """
         Get the type of the first item
+
         :return: item_type
         """
         item = self.lst[0]
@@ -35,8 +37,10 @@ class Utils:
     def validate_items(self):
         """
         Check if all items are of the same type
-        :return if not: raise an TypeError
-        :return if yes: nothing
+
+        :return:
+            if not: raise an TypeError
+            if yes: nothing
         """
         if not all(isinstance(x, self.item_type) for x in self.lst):
             raise TypeError(f'An item has a different type than the others')
@@ -44,7 +48,8 @@ class Utils:
     def create_update_feedback(self, index, value, feedback):
         """
         Create or update the 'self.indexes' dict to provide feedback
-        :return { VALUE: [INDEX(ES)] }
+
+        :return: { VALUE: [INDEX(ES)] }
         """
         if feedback:
             str_value = str(value)
@@ -56,23 +61,25 @@ class Utils:
     def get_indexes(self, index_type, feedback=False):
         """
         Identify unique or duplicate item and return the index of each of them
-        :return without feedback:
-            {
-                'all_index': [REVERSED_ORDER_INDEXES]
-            }
-        :return with feedback:
-            {
-                'all_index': [REVERSED_ORDER_INDEXES],
-                VALUE: [INDEX(ES)],
-                VALUE: [INDEX(ES)],
-            }
+
+        :return:
+            without feedback:
+                {
+                    "all_index": [INDEX(ES)]
+                }
+            with feedback:
+                {
+                    "all_index": [INDEX(ES)],
+                    VALUE_X: [INDEX(ES)],
+                    VALUE_Y: [INDEX(ES)],
+                }
         """
         indexes = []
         for index, value in enumerate(self.lst):
-            if index_type == INDEX_DUPLICATE and self.lst.count(value) >= 2:
+            if index_type == DUPLICATE and self.lst.count(value) >= 2:
                 self.create_update_feedback(index, value, feedback)
                 indexes.append(index)
-            if index_type == INDEX_UNIQUE and self.lst.count(value) == 1:
+            if index_type == UNIQUE and self.lst.count(value) == 1:
                 self.create_update_feedback(index, value, feedback)
                 indexes.append(index)
         self.indexes['all_index'] = indexes
@@ -82,16 +89,18 @@ class Utils:
         """
         Identify duplicated item and return the index of each of them except for
         the first one (in order to create a list of unique item)
-        :return without feedback:
-            {
-                'all_index': [REVERSED_ORDER_INDEXES]
-            }
-        :return with feedback:
-            {
-                'all_index': [REVERSED_ORDER_INDEXES],
-                VALUE: [INDEX(ES)],
-                VALUE: [INDEX(ES)],
-            }
+
+        :return:
+            without feedback:
+                {
+                    "all_index": [REVERSED_ORDER_INDEX(ES)]
+                }
+            with feedback:
+                {
+                    "all_index": [REVERSED_ORDER_INDEX(ES)],
+                    VALUE_X: [INDEX(ES)],
+                    VALUE_Y: [INDEX(ES)],
+                }
         """
         seen_value = []
         seen_index = []
