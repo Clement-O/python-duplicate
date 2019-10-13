@@ -75,6 +75,6 @@ from_list = FromList(lst)
 returned_lst = from_list.analyze(UNIQUE)
 
 # >>> {
-#   "all_index": [1, 5, 6], "five": [5], "six": [6], "two": [1]
+#   "all_index": [1, 5, 6], "two": [1], "five": [5], "six": [6]
 # }
 ```

@@ -105,7 +105,7 @@ LIST_GET_INDEXES_UNIQUE_WITH_FEEDBACK = [
         "all_index": [1, 5, 6], "2": [1], "5": [5], "6": [6]
     },
     {
-        "all_index": [1, 5, 6], "five": [5], "six": [6], "two": [1]
+        "all_index": [1, 5, 6], "two": [1], "five": [5], "six": [6]
     },
     {
         "all_index": [0, 3, 4], "(1.5, 2)": [0], "(5, 6)": [3], "(3, 1.5)": [4]
@@ -154,12 +154,12 @@ LIST_GET_INDEXES_DUPLICATE = [
 ]
 LIST_GET_INDEXES_DUPLICATE_WITH_FEEDBACK = [
     {
-        "all_index": [0, 2, 3, 4, 7, 8, 9], "3": [2, 3, 7], "1.5": [0, 8],
+        "all_index": [0, 2, 3, 4, 7, 8, 9], "1.5": [0, 8], "3": [2, 3, 7],
         "4": [4, 9]
     },
     {
-        "all_index": [0, 2, 3, 4, 7, 8, 9], "three": [2, 3, 7],
-        "one comma five": [0, 8], "four": [4, 9]
+        "all_index": [0, 2, 3, 4, 7, 8, 9], "one comma five": [0, 8],
+        "three": [2, 3, 7], "four": [4, 9]
     },
     {
         "all_index": [1, 2, 5], "(3, 4)": [1, 2, 5]
@@ -168,8 +168,8 @@ LIST_GET_INDEXES_DUPLICATE_WITH_FEEDBACK = [
         "all_index": [1, 2, 5], "[3, 4]": [1, 2, 5]
     },
     {
-        "all_index": [0, 2, 4, 7, 8, 9], "{'id': 3}": [2, 7],
-        "{'id': 1.5, 'value': 'value 0'}": [0, 8],
+        "all_index": [0, 2, 4, 7, 8, 9],
+        "{'id': 1.5, 'value': 'value 0'}": [0, 8], "{'id': 3}": [2, 7],
         "{'id': 4, 'value': 'value 0'}": [4, 9]
     }
 ]
@@ -253,7 +253,7 @@ DICT_GET_INDEXES_UNIQUE_WITH_FEEDBACK = [
         "all_index": [1, 5, 6], "2": [1], "5": [5], "6": [6]
     },
     {
-        "all_index": [0, 3, 4], "[1.5, 2]": [0], "[3, 1.5]": [4], "[5, 6]": [3]
+        "all_index": [0, 3, 4], "[1.5, 2]": [0], "[5, 6]": [3], "[3, 1.5]": [4],
     }
 ]
 DICT_GET_UNIQUE = [
