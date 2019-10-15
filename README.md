@@ -1,6 +1,7 @@
 # python-duplicate 
 [![Build Status](https://travis-ci.com/Clement-O/python-duplicate.svg?branch=master)](https://travis-ci.com/Clement-O/python-duplicate) 
 [![Coverage Status](https://coveralls.io/repos/github/Clement-O/python-duplicate/badge.svg?branch=master)](https://coveralls.io/github/Clement-O/python-duplicate?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/python-duplicate/badge/?version=latest)](https://python-duplicate.readthedocs.io/en/latest/?badge=latest)
 
 The python-duplicate repo (soon to be library) intend to find and deal with duplicate.
 Depending on what you need, it can:
@@ -18,9 +19,6 @@ In the future I intend to add support for:
 - Other type of item for list (Object class for example)
 
 Alternatively, you can look at the project tab of this repo.
-
-## Doc
-Available at : [TODO](add_link)
 
 ## Examples
 ##### Import the class
