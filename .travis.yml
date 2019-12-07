@@ -5,6 +5,10 @@ python:
 
 install:
   - pip install -r requirements/dev.req
+  - pip install -r requirements/requirements.req
+
+services:
+  - postgresql
 
 script:
   - coverage run -m unittest

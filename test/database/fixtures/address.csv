@@ -1,0 +1,9 @@
+id,complete_address,country_id,resident_id
+0,1 street test,0,0
+1,2 street test,1,1
+2,3 street test,0,2
+3,4 street test,0,3
+4,5 street test,1,4
+5,5 street test,0,3
+6,6 street test,0,4
+7,3 street test,0,0
