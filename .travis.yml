@@ -10,8 +10,18 @@ install:
 services:
   - postgresql
 
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+      - postgresql-10
+      - postgresql-client-10
+
+before_script:
+  - psql -c "CREATE USER test WITH PASSWORD 'test' SUPERUSER;" -U postgres
+
 script:
-  - coverage run -m unittest
+  - coverage run --source . -m unittest
 
 after_success:
   - coveralls
