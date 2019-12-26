@@ -1,31 +1,31 @@
 # Third party import
-import psycopg2
+import pymysql
 
 # Local import
-from .utils import Postgres
+from .utils import MySQL
 
 
-class FromPSQL(Postgres):
+class FromMySQL(MySQL):
 
     def __init__(self, info_dict, table, column):
-        Postgres.__init__(self, table, column)
+        MySQL.__init__(self, table, column)
         self.info_dict = info_dict
         self.connection = self.connect()
         self.cursor = self.connection.cursor()
         self.pk = self.get_pk_name()
 
     def connect(self):
-        connection = psycopg2.connect(
+        connection = pymysql.connect(
             host=self.info_dict.get('HOST'),
             database=self.info_dict.get('DATABASE'),
             user=self.info_dict.get('USER'),
             password=self.info_dict.get('PASSWORD'),
-            port=self.info_dict.get('PORT'),
+            port=self.info_dict.get('PORT')
         )
         return connection
 
     def disconnect(self):
-        if self.connection is not None and not self.connection.closed:
+        if self.connection is not None and self.connection.open:
             self.connection.close()
 
     def get_pk_name(self):
