@@ -8,14 +8,15 @@ This document specifies python-duplicate's data package.
 FromList
 --------
 
-.. py:class:: FromList(lst[, key=None])
+.. module:: data.from_list
 
-    :param list lst: list on which to work.
-    :param str key: key on which to work in a list of dict if you need it
+.. autoclass:: FromList
+    :members:
 
 Utils
 -----
 
-.. py:class:: Utils(lst)
+.. module:: data.utils
 
-    :param list lst: list on which to work. By default its the same list passed to `FromList`_
+.. autoclass:: Utils
+    :members:
