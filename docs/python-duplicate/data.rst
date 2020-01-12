@@ -1,7 +1,7 @@
 .. _data:
 
-Data Documentation:
-===================
+Data Documentation
+==================
 
 This document specifies python-duplicate's data package.
 

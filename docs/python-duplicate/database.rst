@@ -1,7 +1,7 @@
 .. _database:
 
-Database Documentation:
-=======================
+Database Documentation
+======================
 
 This document specifies python-duplicate's database package.
 
