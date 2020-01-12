@@ -4,7 +4,7 @@ from .const import DUPLICATE, UNIQUE
 
 class Utils:
     """
-    Provides utils function to handle search of duplicate or unique item
+    Provides functions to handle search of duplicate or unique item
     inside a list
 
     :param list lst:    Param to work on.
