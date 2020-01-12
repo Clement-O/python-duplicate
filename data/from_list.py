@@ -1,3 +1,4 @@
+# Native import
 from copy import deepcopy
 
 # Local import
@@ -20,11 +21,19 @@ class FromList(Utils):
         Analyze the list to get the items and their indexes
         (depending on the analyze_type)
 
-        :return: {
-            "all_index": [INDEX(ES)],
-            "VALUE_X": [INDEX(ES)],
-            "VALUE_Y": [INDEX(ES)],
-        }
+        :param analyze_type: string to determine what analyse to do
+        :param feedback: boolean to return more or less information
+        :return:
+            without feedback:
+                {
+                    "all_index": [REVERSED_ORDER_INDEX(ES)]
+                }
+            with feedback:
+                {
+                    "all_index": [REVERSED_ORDER_INDEX(ES)],
+                    VALUE_X: [INDEX(ES)],
+                    VALUE_Y: [INDEX(ES)],
+                }
         """
 
         if analyze_type == UNIQUE:

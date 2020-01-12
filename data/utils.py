@@ -14,6 +14,7 @@ class Utils:
         Create a list of all item of a given key
             Ex: obj = [{'id': 1}, {'id': 2}] . key = 'id'
 
+        :param key: Dict key on which to get data
         :return: [1, 2]
         """
         self.lst = [value.get(key) for value in self.lst]
@@ -62,6 +63,7 @@ class Utils:
         """
         Identify unique or duplicate item and return the index of each of them
 
+        :param feedback: boolean to return more or less information
         :return:
             without feedback:
                 {
@@ -90,6 +92,7 @@ class Utils:
         Identify duplicated item and return the index of each of them except for
         the first one (in order to create a list of unique item)
 
+        :param feedback: boolean to return more or less information
         :return:
             without feedback:
                 {
