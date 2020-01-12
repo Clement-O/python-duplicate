@@ -11,6 +11,7 @@ Welcome to python-duplicate's documentation!
    :glob:
 
    python-duplicate/data
+   python-duplicate/database
 
 
 
