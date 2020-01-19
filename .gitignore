@@ -5,5 +5,7 @@ __pycache__/
 .idea
 .coverage
 *build/
+dist/
+*.egg-info/
 
 local/

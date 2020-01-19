@@ -12,6 +12,7 @@ Welcome to python-duplicate's documentation!
 
    python-duplicate/data
    python-duplicate/database
+   python-duplicate/examples
 
 
 

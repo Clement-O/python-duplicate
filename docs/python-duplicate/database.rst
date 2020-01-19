@@ -8,7 +8,7 @@ This document specifies python-duplicate's database package.
 FromPSQL
 --------
 
-.. module:: database.from_psql
+.. module:: pyd.database.from_psql
 
 .. autoclass:: FromPSQL
     :members:
@@ -16,7 +16,7 @@ FromPSQL
 FromMySQL
 ---------
 
-.. module:: database.from_mysql
+.. module:: pyd.database.from_mysql
 
 .. autoclass:: FromMySQL
     :members:
@@ -27,13 +27,13 @@ Utils
 Postgres
 ^^^^^^^^
 
-.. module:: database.utils
+.. module:: pyd.database.utils
 
 .. autoclass:: Postgres
 
 MySQL
 ^^^^^
 
-.. module:: database.utils
+.. module:: pyd.database.utils
 
 .. autoclass:: MySQL
