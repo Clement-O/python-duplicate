@@ -8,7 +8,7 @@ This document specifies python-duplicate's data package.
 FromList
 --------
 
-.. module:: pyd.data.from_list
+.. module:: pyduplicate.data.from_list
 
 .. autoclass:: FromList
     :members:
@@ -16,7 +16,7 @@ FromList
 Utils
 -----
 
-.. module:: pyd.data.utils
+.. module:: pyduplicate.data.utils
 
 .. autoclass:: Utils
     :members:

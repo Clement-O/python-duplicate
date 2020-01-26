@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from pymysql import OperationalError
 
 # Local import
-from pyd.database.from_mysql import FromMySQL
+from pyduplicate import FromMySQL
 from test.database.const import MYSQL
 from test.database.fixtures.test_db import CreateFixtureDB
 

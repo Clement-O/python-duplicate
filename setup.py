@@ -5,7 +5,7 @@ with open('PYPI_README.md') as file:
 
 setup(
     name="python-duplicate",
-    version="1.0.1",
+    version="1.0.2",
     url="https://github.com/Clement-O/python-duplicate",
     license="MIT",
     author="Clément Omont--Agnes",

@@ -11,7 +11,7 @@ Import the class
 
 .. code:: python
 
-    from pyd import FromList
+    from pyduplicate import FromList
 
 Create unique items from a list of number
 
@@ -92,7 +92,7 @@ It use the same naming convention as Django, so you can directly pass the Django
 
 .. code:: python
 
-    from pyd import FromMySQL  # or FromPSQL for Postgres
+    from pyduplicate import FromMySQL  # or FromPSQL for Postgres
 
     INFO_DICT = {
         'HOST': "MYSQL_HOSTNAME",

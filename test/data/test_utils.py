@@ -1,8 +1,8 @@
 import unittest
 
 # Local import
-from pyd.data import const
-from pyd.data.utils import Utils
+from pyduplicate.data import const
+from pyduplicate.data.utils import Utils
 from test.data import test_const
 
 

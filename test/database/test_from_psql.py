@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from psycopg2 import DatabaseError
 
 # Local import
-from pyd.database.from_psql import FromPSQL
+from pyduplicate import FromPSQL
 from test.database.const import POSTGRES
 from test.database.fixtures.test_db import CreateFixtureDB
 

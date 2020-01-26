@@ -30,7 +30,7 @@ before_script:
   - sudo mysql_upgrade
 
 script:
-  - coverage run --source . -m unittest
+  - coverage run --source . --omit ./setup.py -m unittest
 
 after_success:
   - coveralls
