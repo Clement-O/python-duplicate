@@ -11,7 +11,7 @@ Import the class
 
 .. code:: python
 
-    from data.from_list import FromList
+    from pyd import FromList
 
 Create unique items from a list of number
 
@@ -61,15 +61,13 @@ Get feedback of unique items of a list of string
 
 .. code:: python
 
-    from data.const import UNIQUE
-
     lst = [
         "one comma five", "two", "three", "three", "four", "five", "six",
         "three", "one comma five", "four"
     ]
 
     from_list = FromList(lst)
-    returned_lst = from_list.analyze(UNIQUE)
+    returned_lst = from_list.analyze('unique')  # or 'duplicate'
 
     # It will return:
     # { "all_index": [1, 5, 6], "two": [1], "five": [5], "six": [6] }
@@ -94,9 +92,7 @@ It use the same naming convention as Django, so you can directly pass the Django
 
 .. code:: python
 
-    from database.from_mysql import FromMySQL
-    # for Postgres:
-    # from database.from_psql import FromPSQL
+    from pyd import FromMySQL  # or FromPSQL for Postgres
 
     INFO_DICT = {
         'HOST': "MYSQL_HOSTNAME",

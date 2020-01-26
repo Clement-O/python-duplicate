@@ -6,13 +6,17 @@
 Welcome to python-duplicate's documentation!
 ============================================
 
+The last release is available on PyPI and can be installed with ``pip``::
+
+    $ pip install python-duplicate
+
 .. toctree::
    :maxdepth: 2
    :glob:
 
+   python-duplicate/examples
    python-duplicate/data
    python-duplicate/database
-   python-duplicate/examples
 
 
 
