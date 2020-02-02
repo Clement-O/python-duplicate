@@ -8,6 +8,23 @@ from test.data import test_const
 
 class TestUtils(unittest.TestCase):
 
+    def test_init_error(self):
+        with self.assertRaises(IndexError):
+            Utils([])
+
+    def test_get_type(self):
+        value = [{}, {'id': 1}]
+        utils = Utils(value)
+        utils.create_list('id')
+        utils.get_type()
+        self.assertEqual(utils.item_type, (int, float))
+
+        value = [{}, {}]
+        utils = Utils(value)
+        utils.create_list('id')
+        utils.get_type()
+        self.assertEqual(utils.item_type, list)  # default type
+
     def test_validate_items(self):
         # mixed list (and dict without key)
         for index, value in enumerate(test_const.LIST_ERROR):

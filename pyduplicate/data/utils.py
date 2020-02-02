@@ -15,6 +15,8 @@ class Utils:
         self.indexes = {}
         self.lst = lst
         self.item_type = list
+        if not self.lst:
+            raise IndexError(f'You must not supply an empty list')
 
     def create_list(self, key: str) -> None:
         """
@@ -26,17 +28,19 @@ class Utils:
 
     def get_type(self) -> None:
         """
-        Get the type of the first item
+        Get the type of the first item which is not None
         """
-        item = self.lst[0]
-        if isinstance(item, (int, float)):
-            self.item_type = (int, float)
-        elif isinstance(item, str):
-            self.item_type = str
-        elif isinstance(item, dict):
-            self.item_type = dict
-        elif isinstance(item, tuple):
-            self.item_type = tuple
+        for item in self.lst:
+            if item:
+                if isinstance(item, (int, float)):
+                    self.item_type = (int, float)
+                elif isinstance(item, str):
+                    self.item_type = str
+                elif isinstance(item, dict):
+                    self.item_type = dict
+                elif isinstance(item, tuple):
+                    self.item_type = tuple
+                break
 
     def validate_items(self) -> None:
         """
@@ -44,7 +48,7 @@ class Utils:
 
         :raise TypeError: If items are NOT of the same type
         """
-        if not all(isinstance(x, self.item_type) for x in self.lst):
+        if not all(isinstance(x, self.item_type) for x in self.lst if x):
             raise TypeError(f'An item has a different type than the others')
 
     def create_update_feedback(self, index: int, value: any,
